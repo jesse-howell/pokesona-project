@@ -7,7 +7,7 @@
 
 
 function accessPokemonApi() {
-        var pokemonApiCall = "https://pokeapi.co/api/v2/pokemon?&limit=151&"
+        var pokemonApiCall = "https://pokeapi.co/api/v2/pokemon?&limit=151&";
 
         fetch(pokemonApiCall)
         .then(function (response){
@@ -22,12 +22,7 @@ function accessPokemonApi() {
                 //this variable will be set dynamically based off the pokesona quiz
                 var pokePick = 1;
 
-
-                
-
-
-
-                findAPokemon(pokePick)
+                findAPokemon(pokePick);
 
             })
 
@@ -39,7 +34,7 @@ accessPokemonApi();
 
 
 function findAPokemon(pokePick) {
-    var pokedexNumber = "https://pokeapi.co/api/v2/pokemon/"+pokePick+"/"
+    var pokedexNumber = "https://pokeapi.co/api/v2/pokemon/"+pokePick+"/";
 
     fetch(pokedexNumber)
     .then(function (response){
@@ -61,7 +56,7 @@ function findAPokemon(pokePick) {
 
 
 
-            var pokeAbilitiesArray = pokemonApiData.abilities 
+            var pokeAbilitiesArray = pokemonApiData.abilities;
                 function countPokeAbilities(pokeAbilitiesArray) {
                     for (i = 0; i <pokeAbilitiesArray.length; i++){
                         console.log("Pokemon Abilities "+(i+1)+": " + pokeAbilitiesArray[i].ability.name)
@@ -70,21 +65,26 @@ function findAPokemon(pokePick) {
 
                 countPokeAbilities(pokeAbilitiesArray)
 
-
-
         })
-    
-
-
 
 }
 
-
-
-
-
-
-
-
-
 // Pokemon Api Section End ======================================
+
+
+
+// Giphy Api Section Start ======================================
+
+var giphyApiKey = "832va7uRpJ7h6cRIeQSDqVb72uTktwtu"
+
+
+
+
+
+
+
+
+
+
+
+// Giphy Api Section End ======================================
