@@ -93,24 +93,21 @@ function accessGiphyPokemonApi(pokeName) {
         var pokeGifArray = data
         console.log(pokeGifArray)
 
+        //Dynamically calls pokemon imgs based off pokeName passed-in-variable
         var pokeImg = data.data[0].image.original_still.url;
         console.log("Pokemon Img Link: " + pokeImg)
+
         //will be img in html
         var imgLink = document.getElementById('pic')
         imgLink.setAttribute('src', pokeImg)
 
-        
+        //Dynamically calls pokemon giphs based off pokeName passed-in-variable
+        var pokeGiph = data.data[0].images.original.url;
+        console.log("Pokemon Gif Link: " + pokeGiph)
 
-
-
-
-
-
-
-
-
-
-
+        //will be giph in html
+        var giphLink = document.getElementById('gif')
+        giphLink.setAttribute('src', pokeGiph)
 
     })
 
