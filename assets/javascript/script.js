@@ -49,6 +49,7 @@ function findAPokemon(pokePick) {
 
             var pokeName = pokemonApiData.name;
             console.log("Pokemon Name: " + pokeName)
+            accessGiphyPokemonApi(pokeName)
             
 
             var pokeType = pokemonApiData.types[0].type.name;
@@ -76,6 +77,45 @@ function findAPokemon(pokePick) {
 // Giphy Api Section Start ======================================
 
 var giphyApiKey = "832va7uRpJ7h6cRIeQSDqVb72uTktwtu"
+
+
+
+function accessGiphyPokemonApi(pokeName) {
+
+    var giphyPokemonApiCall = "https://api.giphy.com/v1/gifs/search?&q="+pokeName+"&api_key="+ giphyApiKey;
+    fetch(giphyPokemonApiCall)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+
+
+        var pokeGifArray = data
+        console.log(pokeGifArray)
+
+        var pokeImg = data.data[0].image.original_still.url;
+        console.log("Pokemon Img Link: " + pokeImg)
+        //will be img in html
+        var imgLink = document.getElementById('pic')
+        imgLink.setAttribute('src', pokeImg)
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+
+
+}
 
 
 
