@@ -44,26 +44,8 @@ function findAPokemon(pokePick) {
             var pokemonApiData = data;
             console.log(pokemonApiData);
 
-
-            var pokeName = pokemonApiData.name;
-            console.log("Pokemon Name: " + pokeName);
-            accessGiphyPokemonApi(pokeName);
-
-
             var pokeType = pokemonApiData.types[0].type.name;
             console.log("Pokemon Type: " + pokeType);
-
-
-
-            var pokeAbilitiesArray = pokemonApiData.abilities;
-
-            function countPokeAbilities(pokeAbilitiesArray) {
-                for (i = 0; i < pokeAbilitiesArray.length; i++) {
-                    console.log("Pokemon Abilities " + (i + 1) + ": " + pokeAbilitiesArray[i].ability.name);
-                }
-            }
-
-            countPokeAbilities(pokeAbilitiesArray);
 
         })
 
@@ -123,6 +105,16 @@ var questionTwoPg = document.querySelector("#dos");
 var questionThreePg = document.querySelector("#tres");
 var questionFourPg = document.querySelector("#quatro");
 var questionFivePg = document.querySelector("#cinco");
+
+// Quiz Pages Section End ===================================
+
+
+
+// Quiz Pages Section End ===================================
+
+
+
+
 
 
 
