@@ -99,18 +99,43 @@ function accessGiphyPokemonApi(pokeName) {
 
 // Quiz Pages Section Start ===================================
 
-var pokeStartPg = document.querySelector("#start");
-var questionOnePg = document.querySelector("#uno");
-var questionTwoPg = document.querySelector("#dos");
-var questionThreePg = document.querySelector("#tres");
-var questionFourPg = document.querySelector("#quatro");
-var questionFivePg = document.querySelector("#cinco");
+var q1DropDown = document.getElementById('Q1');
+var q2DropDown = document.getElementById('Q2');
+var q3DropDown = document.getElementById('Q3');
+var q4DropDown = document.getElementById('Q4');
+var q5DropDown = document.getElementById('Q5');
+
+
+var q1Answer = q1DropDown.addEventListener('change', function(event){
+    event.preventDefault();
+    console.log(event.target.value)
+})
+var q2Answer = q2DropDown.addEventListener('change', function(event){
+    event.preventDefault();
+    console.log(event.target.value)
+})
+var q3Answer = q3DropDown.addEventListener('change', function(event){
+    event.preventDefault();
+    console.log(event.target.value)
+})
+var q4Answer = q4DropDown.addEventListener('change', function(event){
+    event.preventDefault();
+    console.log(event.target.value)
+})
+var q5Answer = q5DropDown.addEventListener('change', function(event){
+    event.preventDefault();
+    console.log(event.target.value)
+})
+
+
+
+
 
 // Quiz Pages Section End ===================================
 
 
 
-// Quiz Pages Section End ===================================
+
 
 
 
