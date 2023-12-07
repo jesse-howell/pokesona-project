@@ -18,9 +18,9 @@ function accessPokemonApi() {
 
 
             //this variable will be set dynamically based off the pokesona quiz
-            var pokePick = 1;
+            var typePick = "ground";
 
-            findAPokemon(pokePick);
+            findAPokemonType(typePick);
 
         })
 
@@ -29,12 +29,12 @@ function accessPokemonApi() {
 
 accessPokemonApi();
 
+// edited function to select pokemon type instead of pokedex number
 
+function findAPokemonType(typePick) {
+    var pokesonaType = "https://pokeapi.co/api/v2/type/" + typePick + "/";
 
-function findAPokemon(pokePick) {
-    var pokedexNumber = "https://pokeapi.co/api/v2/pokemon/" + pokePick + "/";
-
-    fetch(pokedexNumber)
+    fetch(pokesonaType)
         .then(function (response) {
             return response.json()
         })
@@ -44,8 +44,8 @@ function findAPokemon(pokePick) {
             var pokemonApiData = data;
             console.log(pokemonApiData);
 
-            var pokeType = pokemonApiData.types[0].type.name;
-            console.log("Pokemon Type: " + pokeType);
+            // var pokeType = pokemonApiData.types[0].type.name;
+            // console.log("Pokemon Type: " + pokesonaType);
 
         })
 
