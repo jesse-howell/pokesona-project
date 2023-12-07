@@ -106,12 +106,23 @@ var q4DropDown = document.getElementById('Q4');
 var q5DropDown = document.getElementById('Q5');
 
 
-var q1Answer = q1DropDown.options[q1DropDown.selectedIndex].value;
+//query select on parrent & class name of child to select that child
+
+// var testing =  q1DropDown.querySelectorAll('.answer')
+// result;
+// console.log(testing)
+
+
+var q1Answer = q1DropDown.addEventListener('change', function(event){
+    event.preventDefault();
+    console.log(event.target.value)
+
+})
 var q2Answer = q2DropDown
 var q3Answer = q3DropDown
 var q4Answer = q4DropDown
 var q5Answer = q5DropDown
-console.log(q1Answer)
+
 
 
 
