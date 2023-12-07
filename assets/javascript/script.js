@@ -106,5 +106,15 @@ var questionThreePg = document.querySelector("#tres");
 var questionFourPg = document.querySelector("#quatro");
 var questionFivePg = document.querySelector("#cinco");
 
+// Quiz Pages Section End ===================================
+
+
+
+// Quiz Pages Section End ===================================
+
+
+
+
+
 
 
