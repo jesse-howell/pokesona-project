@@ -14,11 +14,11 @@ function accessPokemonApi() {
         .then(function (data) {
 
             var pokemonApiData = data;
-            // console.log(pokemonApiData)
+            console.log(pokemonApiData)
 
 
             //this variable will be set dynamically based off the pokesona quiz
-            var typePick = "ground";
+            var typePick = "fire";
 
             findAPokemonType(typePick);
 
@@ -105,7 +105,6 @@ var q3DropDown = document.getElementById('Q3');
 var q4DropDown = document.getElementById('Q4');
 var q5DropDown = document.getElementById('Q5');
 
-
 var q1Answer = q1DropDown.addEventListener('change', function(event){
     event.preventDefault();
     console.log(event.target.value)
@@ -133,10 +132,36 @@ var q5Answer = q5DropDown.addEventListener('change', function(event){
 
 // Quiz Pages Section End ===================================
 
+// Result from a chatGPT prompt. Trying to get a good idea of the direction to head in.
+var answerData = [q1Answer, q2Answer, q3Answer, q4Answer, q5Answer];
+var response = answerData.length;
+for (let i = 0; i < answerData.length; i++) {
+    // const response = p();
 
+    // Update type counts based on the response
+    if (response === 'fire') {
+        fireCount++;
+    } else if (response === 'water') {
+        waterCount++;
+    } else if (response === 'grass') {
+        grassCount++;
+    } else {
+        // console.log("Invalid response. Please enter A, B, or C.");
+    }
+}
 
+// Determine the Pokémon type based on the counts
+let pokemonType;
+if (fireCount > waterCount && fireCount > grassCount) {
+    pokemonType = "Fire";
+} else if (waterCount > fireCount && waterCount > grassCount) {
+    pokemonType = "Water";
+} else {
+    pokemonType = "Grass";
+}
 
-
+// Display the result
+console.log(`\nBased on your responses, your Pokémon type is ${pokemonType}!`);
 
 
 
