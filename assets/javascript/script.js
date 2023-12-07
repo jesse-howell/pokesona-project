@@ -99,18 +99,27 @@ function accessGiphyPokemonApi(pokeName) {
 
 // Quiz Pages Section Start ===================================
 
-var pokeStartPg = document.querySelector("#start");
-var questionOnePg = document.querySelector("#uno");
-var questionTwoPg = document.querySelector("#dos");
-var questionThreePg = document.querySelector("#tres");
-var questionFourPg = document.querySelector("#quatro");
-var questionFivePg = document.querySelector("#cinco");
+var q1DropDown = document.getElementById('Q1');
+var q2DropDown = document.getElementById('Q2');
+var q3DropDown = document.getElementById('Q3');
+var q4DropDown = document.getElementById('Q4');
+var q5DropDown = document.getElementById('Q5');
+
+
+var q1Answer = q1DropDown.options[q1DropDown.selectedIndex].value;
+var q2Answer = q2DropDown
+var q3Answer = q3DropDown
+var q4Answer = q4DropDown
+var q5Answer = q5DropDown
+console.log(q1Answer)
+
+
 
 // Quiz Pages Section End ===================================
 
 
 
-// Quiz Pages Section End ===================================
+
 
 
 
