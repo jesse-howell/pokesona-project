@@ -21,13 +21,14 @@ function accessPokemonApi() {
             var typePick = "fire";
 
             findAPokemonType(typePick);
-
+            accessGiphyPokemonApi(typePick)
         })
+        .then()
 
 
 }
 
-accessPokemonApi();
+// accessPokemonApi();
 
 // edited function to select pokemon type instead of pokedex number
 
@@ -39,15 +40,11 @@ function findAPokemonType(typePick) {
             return response.json()
         })
         .then(function (data) {
-
-
-            var pokemonApiData = data;
-            console.log(pokemonApiData);
-
-            // var pokeType = pokemonApiData.types[0].type.name;
-            // console.log("Pokemon Type: " + pokesonaType);
+            var pokemonNmae = data.pokemon[Math.floor(Math.random()*10)].pokemon.name
+            accessGiphyPokemonApi(pokemonNmae)
 
         })
+
 
 }
 
@@ -62,7 +59,7 @@ var giphyApiKey = "832va7uRpJ7h6cRIeQSDqVb72uTktwtu";
 
 
 function accessGiphyPokemonApi(pokeName) {
-
+    console.log("giphy")
     var giphyPokemonApiCall = "https://api.giphy.com/v1/gifs/search?&q=" + pokeName + "&api_key=" + giphyApiKey;
 
     fetch(giphyPokemonApiCall)
@@ -73,19 +70,19 @@ function accessGiphyPokemonApi(pokeName) {
 
 
             var pokeGifArray = data;
-            console.log(pokeGifArray);
+            console.log(pokeGifArray.data[0].images.original.url);
 
             //Dynamically calls pokemon imgs based off pokeName passed-in-variable
-            var pokeImg = data.data[0].image.original_still.url;
-            console.log("Pokemon Img Link: " + pokeImg);
+            //var pokeImg = data.data[0].image.original_still.url;
+            //console.log("Pokemon Img Link: " + pokeImg);
 
             //will be img in html
-            var imgLink = document.getElementById('pic');
-            imgLink.setAttribute('src', pokeImg);
+            //var imgLink = document.getElementById('pic');
+            //imgLink.setAttribute('src', pokeImg);
 
             //Dynamically calls pokemon giphs based off pokeName passed-in-variable
-            var pokeGiph = data.data[0].images.original.url;
-            console.log("Pokemon Gif Link: " + pokeGiph);
+//            var pokeGiph = data.data[0].images.original.url;
+  //          console.log("Pokemon Gif Link: " + pokeGiph);
 
             //will be giph in html
             var giphLink = document.getElementById('gif');
@@ -99,29 +96,29 @@ function accessGiphyPokemonApi(pokeName) {
 
 // Quiz Pages Section Start ===================================
 
-var q1DropDown = document.getElementById('Q1');
-var q2DropDown = document.getElementById('Q2');
-var q3DropDown = document.getElementById('Q3');
-var q4DropDown = document.getElementById('Q4');
-var q5DropDown = document.getElementById('Q5');
+var q1DropDown = document.getElementById('Q1-new');
+var q2DropDown = document.getElementById('Q2-new');
+var q3DropDown = document.getElementById('Q3-new');
+var q4DropDown = document.getElementById('Q4-new');
+var q5DropDown = document.getElementById('Q5-new');
 
-var q1Answer = q1DropDown.addEventListener('change', function(event){
+var q1Answer = q1DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
 })
-var q2Answer = q2DropDown.addEventListener('change', function(event){
+var q2Answer = q2DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
 })
-var q3Answer = q3DropDown.addEventListener('change', function(event){
+var q3Answer = q3DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
 })
-var q4Answer = q4DropDown.addEventListener('change', function(event){
+var q4Answer = q4DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
 })
-var q5Answer = q5DropDown.addEventListener('change', function(event){
+var q5Answer = q5DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
 })
@@ -132,39 +129,67 @@ var q5Answer = q5DropDown.addEventListener('change', function(event){
 
 // Quiz Pages Section End ===================================
 
-// Result from a chatGPT prompt. Trying to get a good idea of the direction to head in.
-var answerData = [q1Answer, q2Answer, q3Answer, q4Answer, q5Answer];
-var response = answerData.length;
-for (let i = 0; i < answerData.length; i++) {
-    // const response = p();
 
-    // Update type counts based on the response
-    if (response === 'fire') {
-        fireCount++;
-    } else if (response === 'water') {
-        waterCount++;
-    } else if (response === 'grass') {
-        grassCount++;
-    } else {
-        // console.log("Invalid response. Please enter A, B, or C.");
+
+
+function handleSubmit(event) {
+    let answerArr = [];
+    let typeCount = {};
+
+    event.preventDefault();
+    console.log('inside handleSubmit')
+    console.log(q1DropDown.value)
+    console.log(q2DropDown.value)
+    console.log(q3DropDown.value)
+    console.log(q4DropDown.value)
+    console.log(q5DropDown.value)
+
+    // pushes all values from dropdowns
+    answerArr.push(q1DropDown.value);
+    answerArr.push(q2DropDown.value);
+    answerArr.push(q3DropDown.value);
+    answerArr.push(q4DropDown.value);
+    answerArr.push(q5DropDown.value);
+    console.log(answerArr)
+
+    // creates an objct to keep track of type frequency
+    for (let i = 0; i < answerArr.length; i++) {
+        var type = answerArr[i];
+        if (type in typeCount) {
+            typeCount[type]++;
+        } else {
+            typeCount[type] = 1;
+        }
     }
-}
+    console.log(typeCount)
 
-// Determine the Pokémon type based on the counts
-let pokemonType;
-if (fireCount > waterCount && fireCount > grassCount) {
-    pokemonType = "Fire";
-} else if (waterCount > fireCount && waterCount > grassCount) {
-    pokemonType = "Water";
-} else {
-    pokemonType = "Grass";
-}
+    // finds the key with the highest value
+    var max = 0;
+    var maxKey = "";
 
+    // for loop to find the type that shows up most frequently
+    for (let type in typeCount) {
+        if (typeCount[type] > max) {
+            max = typeCount[type];
+            maxKey = type
+        }
+    }
+    console.log(typeCount)
+    console.log(maxKey)
+
+
+    // search using the pokemon type
+    findAPokemonType(maxKey);
+}
 // Display the result
-console.log(`\nBased on your responses, your Pokémon type is ${pokemonType}!`);
+
+var questionForm = document.getElementById('question-form')
+
+
+// console.log(`\nBased on your responses, your Pokémon type is ${pokemonType}!`);
 
 
 
-
-
+// event listener for the submit button
+questionForm.addEventListener('submit', handleSubmit);
 

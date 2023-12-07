@@ -16,110 +16,103 @@
         <div class="row justify-content-md-center text-center" id="start">
             <main>
                 <h1>Pokésona: The Pokémon Pérsona Quiz</h1>
-                <p>Do you like to daydream? If not, here’s something you can use to daydream about? Escape capitalism by finding what type of Pokémon you are!!</p>
+                <p>Do you like to daydream? If not, here’s something you can use to daydream about? Escape capitalism by
+                    finding what type of Pokémon you are!!</p>
                 <br>Answer the following questions to find out what type of Pokémon you are!</br>
             </main>
         </div>
 
         <!-- <aside> -->
-            <div class="row justify-content-center">
-                <!-- added p-3 to col class -->
-                <div class="col col-md-4 p-3">
-                    <!-- <h2>Pokesona Quiz</h2> -->
-                    <!-- found content cards on bootswatch and pasted into html -->
+        <div class="row justify-content-center">
+            <!-- added p-3 to col class -->
+            <div class="col col-md-4 p-3">
+                <form id="question-form" class="form">
                     <div class="card text-white bg-primary mb-3 text-center">
                         <div class="card-body">
                             <h4 class="card-title"><strong>What's your preferred climate?</strong></h4>
-                            <!-- dropdown for answers out of 5 poss choices, from bootswatch - pasted into html -->
-                            <div class="form-group">
-                                <select class="form-select" id="Q1">
-                                    <option value="placeholder" class="placeholder"> Select Option Below </option>
-                                    <option value="fire" class="answer"> Hot and dry </option>
-                                    <option value="water" class="answer"> Mild and balanced </option>
-                                    <option value="grass" class="answer"> Cool and humid </option>
-                                </select>
-                            </div>
+                            <select class="form-select" name="Q1" id="Q1-new">
+                                <option value="placeholder" class="placeholder"> Selection Option Below</option>
+                                <option value="fire" class="answer"> Hot and dry </option>
+                                <option value="water" class="answer"> Mild and balanced </option>
+                                <option value="grass" class="answer"> Cool and humid </option>
+                            </select>
                         </div>
                     </div>
-
                     <div class="card text-white bg-primary mb-3 text-center">
                         <div class="card-body">
                             <!-- added test questions -->
-                            <h4 class="card-title"><strong>How would you describe your approach to challenges?</strong></h4>
-                            <!-- dropdown for answers out of 5 poss choices, from bootswatch - pasted into html -->
-                            <div class="form-group">
-                                <select class="form-select" id="Q2">
-                                    <option value="placeholder" class="placeholder"> Select Option Below </option>
-                                    <option value="fire" class="answer"> Fierce and passionate </option>
-                                    <option value="water"  class="answer"> Adaptable and calm </option>
-                                    <option value="grass" class="answer"> Patient and resilient </option>
+                            <h4 class="card-title"><strong>How would you describe your approach to challenges?</strong>
+                            </h4>
+                            <select class="form-select" name="Q2" id="Q2-new">
+                                <option value="placeholder" class="placeholder"> Select Option Below </option>
+                                <option value="fire" class="answer"> Fierce and passionate </option>
+                                <option value="water" class="answer"> Adaptable and calm </option>
+                                <option value="grass" class="answer"> Patient and resilient </option>
 
-                                </select>
-                            </div>
+                            </select>
                         </div>
                     </div>
+                    <div class="card text-white bg-primary mb-3 text-center">
 
-                    <div class="card text-white bg-primary mb-3 text-center" >
                         <div class="card-body" id="tres">
                             <h4 class="card-title"><strong>Choose an environment you feel most at home in:</strong></h4>
-                            <!-- dropdown for answers out of 5 poss choices, from bootswatch - pasted into html -->
-                            <div class="form-group">
-                                <select class="form-select" id="Q3">
-                                    <option value="placeholder" class="placeholder"> Select Option Below </option>
-                                    <option value="fire" class="answer"> Desert areas </option>
-                                    <option value="water" class="answer"> Coastal areas </option>
-                                    <option value="grass" class="answer"> Dense forests </option>
-                    
-                                </select>
-                            </div>
+
+                            <select class="form-select" name="Q3" id="Q3-new">
+                                <option value="placeholder" class="placeholder"> Select Option Below </option>
+                                <option value="fire" class="answer"> Desert areas </option>
+                                <option value="water" class="answer"> Coastal areas </option>
+                                <option value="grass" class="answer"> Dense forests </option>
+
+                            </select>
                         </div>
                     </div>
 
                     <div class="card text-white bg-primary mb-3 text-center">
+
                         <div class="card-body">
                             <h4 class="card-title"><strong>What's your ideal way to spend a day?</strong></h4>
-                            <!-- dropdown for answers out of 5 poss choices, from bootswatch - pasted into html -->
-                            <div class="form-group">
-                                <select class="form-select" id="Q4">
-                                    <option value="placeholder" class="placeholder"> Select Option Below </option>
-                                    <option value="fire" class="answer"> Training intensely </option>
-                                    <option value="water" class="answer"> Relaxing by the water </option>
-                                    <option value="grass" class="answer"> Exploring the great outdoors </option>
 
-                                </select>
-                            </div>
+                            <select class="form-select" name="Q4" id="Q4-new">
+                                <option value="placeholder" class="placeholder"> Select Option Below </option>
+                                <option value="fire" class="answer"> Training intensely </option>
+                                <option value="water" class="answer"> Relaxing by the water </option>
+                                <option value="grass" class="answer"> Exploring the great outdoors </option>
+
+                            </select>
                         </div>
                     </div>
-
                     <div class="card text-white bg-primary mb-3 text-center">
                         <div class="card-body">
                             <h4 class="card-title"><strong>How do you handle conflicts with others?</strong></h4>
-                            <!-- dropdown for answers out of 5 poss choices, from bootswatch - pasted into html -->
-                            <div class="form-group">
-                                <select class="form-select" id="Q5">
-                                    <option value="placeholder" class="placeholder"> Select Option Below </option>
-                                    <option value="fire" class="answer"> Confront them head on </option>
-                                    <option value="water" class="answer"> Find common ground and compromise </option>
-                                    <option value="grass" class="answer"> Give it time and let things cool down </option>
 
-                                </select>
-                            </div>
+                            <select class="form-select" name="Q5" id="Q5-new">
+                                <option value="placeholder" class="placeholder"> Select Option Below </option>
+                                <option value="fire" class="answer"> Confront them head on </option>
+                                <option value="water" class="answer"> Find common ground and compromise </option>
+                                <option value="grass" class="answer"> Give it time and let things cool down </option>
+                            </select>
                         </div>
-                        
                     </div>
+
                     <!-- created submit button -->
                     <div class="row justify-content-center">
-                        <button class="btn btn-primary " type="submit">Submit</button>
+                        <button id="submitBtn" class="btn btn-primary" type="submit">Submit</button>
                     </div>
-                </div>
-                
+                </form>
+                <!-- <h2>Pokesona Quiz</h2> -->
+                <!-- found content cards on bootswatch and pasted into html -->
+
+
             </div>
-            
+
+            <img id="gif" ></img>
+        </div>
+
         </aside>
 
 
-    <!-- modal to submit answers to pokequiz -->
-    <!--  
+        <!-- modal to submit answers to pokequiz -->
+        <!--  
     <div class="modal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -140,7 +133,7 @@
         </div>
       </div>
 -->
-    <script src="./assets/javascript/script.js"></script>
+        <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
