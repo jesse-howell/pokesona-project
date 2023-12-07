@@ -118,3 +118,11 @@ function accessGiphyPokemonApi(pokeName) {
 // Quiz Pages Section Start ===================================
 
 var pokeStartPg = document.querySelector("#start");
+var questionOnePg = document.querySelector("#uno");
+var questionTwoPg = document.querySelector("#dos");
+var questionThreePg = document.querySelector("#tres");
+var questionFourPg = document.querySelector("#quatro");
+var questionFivePg = document.querySelector("#cinco");
+
+
+
