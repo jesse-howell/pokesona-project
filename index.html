@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <!-- changed added fluid to container class -->
     <div class="container-fluid">
-        <!-- added text-center to div -->
         <div class="row justify-content-md-center text-center" id="start">
             <main>
                 <h1>Pokésona: The Pokémon Pérsona Quiz</h1>
@@ -22,9 +20,7 @@
             </main>
         </div>
 
-        <!-- <aside> -->
         <div class="row justify-content-center">
-            <!-- added p-3 to col class -->
             <div class="col col-md-4 p-3">
                 <form id="question-form" class="form">
                     <div class="card text-white bg-primary mb-3 text-center">
@@ -38,9 +34,9 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="card text-white bg-primary mb-3 text-center">
                         <div class="card-body">
-                            <!-- added test questions -->
                             <h4 class="card-title"><strong>How would you describe your approach to challenges?</strong>
                             </h4>
                             <select class="form-select" name="Q2" id="Q2-new">
@@ -48,43 +44,37 @@
                                 <option value="fire" class="answer"> Fierce and passionate </option>
                                 <option value="water" class="answer"> Adaptable and calm </option>
                                 <option value="grass" class="answer"> Patient and resilient </option>
-
                             </select>
                         </div>
                     </div>
-                    <div class="card text-white bg-primary mb-3 text-center">
 
+                    <div class="card text-white bg-primary mb-3 text-center">
                         <div class="card-body" id="tres">
                             <h4 class="card-title"><strong>Choose an environment you feel most at home in:</strong></h4>
-
                             <select class="form-select" name="Q3" id="Q3-new">
                                 <option value="placeholder" class="placeholder"> Select Option Below </option>
                                 <option value="fire" class="answer"> Desert areas </option>
                                 <option value="water" class="answer"> Coastal areas </option>
                                 <option value="grass" class="answer"> Dense forests </option>
-
                             </select>
                         </div>
                     </div>
 
                     <div class="card text-white bg-primary mb-3 text-center">
-
                         <div class="card-body">
                             <h4 class="card-title"><strong>What's your ideal way to spend a day?</strong></h4>
-
                             <select class="form-select" name="Q4" id="Q4-new">
                                 <option value="placeholder" class="placeholder"> Select Option Below </option>
                                 <option value="fire" class="answer"> Training intensely </option>
                                 <option value="water" class="answer"> Relaxing by the water </option>
                                 <option value="grass" class="answer"> Exploring the great outdoors </option>
-
                             </select>
                         </div>
                     </div>
+
                     <div class="card text-white bg-primary mb-3 text-center">
                         <div class="card-body">
                             <h4 class="card-title"><strong>How do you handle conflicts with others?</strong></h4>
-
                             <select class="form-select" name="Q5" id="Q5-new">
                                 <option value="placeholder" class="placeholder"> Select Option Below </option>
                                 <option value="fire" class="answer"> Confront them head on </option>
@@ -99,48 +89,20 @@
                         <button id="submitBtn" class="btn btn-primary" type="submit">Submit</button>
                     </div>
                 </form>
-                <!-- <h2>Pokesona Quiz</h2> -->
-                <!-- found content cards on bootswatch and pasted into html -->
-
-
             </div>
-
-            
         </div>
+
         <div class="row justify-content-center">
-        <div class="card text-white bg-primary mb-3 text-center">
-            <div class="card-body">
+            <div class="card text-white bg-primary mb-3 text-center">
+                <div class="card-body">
                     <p>Congratulations on finding out your Pokésona type!</p>
                     <img id="gif" src="" alt="">
-
+                </div>
             </div>
-          </div>
         </div>
-        </aside>
 
+        <div class="row justify-content-center text-danger" id="stored-type"></div>
 
-        <!-- modal to submit answers to pokequiz -->
-        <!--  
-    <div class="modal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save changes</button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
--->
         <script src="./assets/javascript/script.js">fetch(giphyPokemonApiCall)</script>
 </body>
 

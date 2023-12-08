@@ -1,8 +1,6 @@
 //Script
 
-
 // Pokemon Api Section Start ====================================
-
 
 function accessPokemonApi() {
     var pokemonApiCall = "https://pokeapi.co/api/v2/pokemon?&limit=151&";
@@ -12,21 +10,14 @@ function accessPokemonApi() {
             return response.json()
         })
         .then(function (data) {
-
-            var pokemonApiData = data;
-            console.log(pokemonApiData)
-
-
             //this variable will be set dynamically based off the pokesona quiz
             var typePick = "fire";
 
             findAPokemonType(typePick);
-            accessGiphyPokemonApi(typePick)
+            accessGiphyPokemonApi(typePick);
         })
         .then()
 };
-
-// accessPokemonApi();
 
 // edited function to select pokemon type instead of pokedex number
 
@@ -38,21 +29,16 @@ function findAPokemonType(typePick) {
             return response.json()
         })
         .then(function (data) {
-            var pokemonNmae = data.pokemon[Math.floor(Math.random()*10)].pokemon.name
-            accessGiphyPokemonApi(pokemonNmae)
-
+            var pokemonName = data.pokemon[Math.floor(Math.random() * 10)].pokemon.name;
+            accessGiphyPokemonApi(pokemonName);
         })
 };
 
 // Pokemon Api Section End ======================================
 
-
-
 // Giphy Api Section Start ======================================
 
 var giphyApiKey = "832va7uRpJ7h6cRIeQSDqVb72uTktwtu";
-
-
 
 function accessGiphyPokemonApi(pokeName) {
     console.log("giphy")
@@ -63,22 +49,11 @@ function accessGiphyPokemonApi(pokeName) {
             return response.json()
         })
         .then(function (data) {
-
-
             var pokeGifArray = data;
             console.log(pokeGifArray.data[0].images.original.url);
 
-            //Dynamically calls pokemon imgs based off pokeName passed-in-variable
-            //var pokeImg = data.data[0].image.original_still.url;
-            //console.log("Pokemon Img Link: " + pokeImg);
-
-            //will be img in html
-            //var imgLink = document.getElementById('pic');
-            //imgLink.setAttribute('src', pokeImg);
-
             //Dynamically calls pokemon giphs based off pokeName passed-in-variable
-           var pokeGiph = data.data[0].images.original.url;
-  //          console.log("Pokemon Gif Link: " + pokeGiph);
+            var pokeGiph = data.data[0].images.original.url;
 
             //will be giph in html
             var giphLink = document.getElementById('gif');
@@ -88,7 +63,6 @@ function accessGiphyPokemonApi(pokeName) {
 };
 
 // Giphy Api Section End ======================================
-
 
 // Quiz Pages Section Start ===================================
 
@@ -100,40 +74,33 @@ var q5DropDown = document.getElementById('Q5-new');
 
 var q1Answer = q1DropDown.addEventListener('change', function (event) {
     event.preventDefault();
-    console.log(event.target.value)
-});
-var q2Answer = q2DropDown.addEventListener('change', function (event) {
-    event.preventDefault();
-    console.log(event.target.value)
-});
-var q3Answer = q3DropDown.addEventListener('change', function (event) {
-    event.preventDefault();
-    console.log(event.target.value)
-});
-var q4Answer = q4DropDown.addEventListener('change', function (event) {
-    event.preventDefault();
-    console.log(event.target.value)
-});
-var q5Answer = q5DropDown.addEventListener('change', function (event) {
-    event.preventDefault();
-    console.log(event.target.value)
 });
 
+var q2Answer = q2DropDown.addEventListener('change', function (event) {
+    event.preventDefault();
+});
+
+var q3Answer = q3DropDown.addEventListener('change', function (event) {
+    event.preventDefault();
+});
+
+var q4Answer = q4DropDown.addEventListener('change', function (event) {
+    event.preventDefault();
+});
+
+var q5Answer = q5DropDown.addEventListener('change', function (event) {
+    event.preventDefault();
+});
 
 // Quiz Pages Section End ===================================
 
-
+// Type Assignment Section Start ============================
+// logic to calculate the Poke-type from answers
 function handleSubmit(event) {
-    let answerArr = [];
-    let typeCount = {};
+    var answerArr = [];
+    var typeCount = {};
 
     event.preventDefault();
-    console.log('inside handleSubmit')
-    console.log(q1DropDown.value);
-    console.log(q2DropDown.value);
-    console.log(q3DropDown.value);
-    console.log(q4DropDown.value);
-    console.log(q5DropDown.value);
 
     // pushes all values from dropdowns
     answerArr.push(q1DropDown.value);
@@ -152,7 +119,6 @@ function handleSubmit(event) {
             typeCount[type] = 1;
         }
     }
-    console.log(typeCount);
 
     // finds the key with the highest value
     var max = 0;
@@ -162,27 +128,39 @@ function handleSubmit(event) {
     for (let type in typeCount) {
         if (typeCount[type] > max) {
             max = typeCount[type];
-            maxKey = type
+            maxKey = type;
         }
     }
-    console.log(typeCount);
-    console.log(maxKey);
-
+    // send type to local storage
     localStorage.setItem("Type", maxKey);
-    // console.log(results);
 
     // search using the pokemon type
     findAPokemonType(maxKey);
+
+    displayPrevType();
 };
+
+// Type Assignment Section End ==============================
+
 // Display the result
-
 var questionForm = document.getElementById('question-form');
-
-
-// console.log(`\nBased on your responses, your Pokémon type is ${pokemonType}!`);
-
-
 
 // event listener for the submit button
 questionForm.addEventListener('submit', handleSubmit);
 
+function displayPrevType() {
+    var previousType = localStorage.getItem("Type");
+    var endP = "You're a " + previousType.toString() + " type!!!";
+    var endPContainingEl = document.getElementById("stored-type");
+    var endPEl = document.createElement("p");
+    endPContainingEl.appendChild(endPEl);
+    endPEl.setAttribute("class", "font-italic", "text-center");
+    endPEl.setAttribute("id", "congrats")
+    endPEl.innerHTML = endP;
+
+    increaseFontSz();
+};
+
+function increaseFontSz () {
+    document.getElementById("congrats").style.fontSize = "xxx-large";
+};

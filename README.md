@@ -17,6 +17,7 @@ APIs Used:
 
 ## Screenshot
 ![Webpage Screenshot](./assets/images/Pokesona-Quiz.png)
+![Webpage Completed Screenshot](./assets/images/Pokesona-Quiz-Completed.png)
 
 ## Link
 [Link To URL](https://jesse-howell.github.io/pokesona-project/)
