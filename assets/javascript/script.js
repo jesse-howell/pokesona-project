@@ -82,7 +82,7 @@ function accessGiphyPokemonApi(pokeName) {
 
             //will be giph in html
             var giphLink = document.getElementById('gif');
-            giphLink.setAttribute('src', pokeGiph);
+            giphLink.setAttribute('src', pokeGifArray);
 
         })
 };
@@ -169,7 +169,7 @@ function handleSubmit(event) {
     console.log(maxKey);
 
     var resultStored = localStorage.setItem("Type", maxKey);
-    console.log(results);
+    // console.log(results);
 
     // search using the pokemon type
     findAPokemonType(maxKey);
