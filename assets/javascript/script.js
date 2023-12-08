@@ -162,5 +162,5 @@ function displayPrevType() {
 };
 
 function increaseFontSz () {
-    document.getElementById("congrats").style.fontSize = "x-large";
+    document.getElementById("congrats").style.fontSize = "xxx-large";
 };
