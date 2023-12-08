@@ -24,9 +24,7 @@ function accessPokemonApi() {
             accessGiphyPokemonApi(typePick)
         })
         .then()
-
-
-}
+};
 
 // accessPokemonApi();
 
@@ -44,9 +42,7 @@ function findAPokemonType(typePick) {
             accessGiphyPokemonApi(pokemonNmae)
 
         })
-
-
-}
+};
 
 // Pokemon Api Section End ======================================
 
@@ -105,31 +101,26 @@ var q5DropDown = document.getElementById('Q5-new');
 var q1Answer = q1DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
-})
+});
 var q2Answer = q2DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
-})
+});
 var q3Answer = q3DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
-})
+});
 var q4Answer = q4DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
-})
+});
 var q5Answer = q5DropDown.addEventListener('change', function (event) {
     event.preventDefault();
     console.log(event.target.value)
-})
-
-
-
+});
 
 
 // Quiz Pages Section End ===================================
-
-
 
 
 function handleSubmit(event) {
@@ -138,11 +129,11 @@ function handleSubmit(event) {
 
     event.preventDefault();
     console.log('inside handleSubmit')
-    console.log(q1DropDown.value)
-    console.log(q2DropDown.value)
-    console.log(q3DropDown.value)
-    console.log(q4DropDown.value)
-    console.log(q5DropDown.value)
+    console.log(q1DropDown.value);
+    console.log(q2DropDown.value);
+    console.log(q3DropDown.value);
+    console.log(q4DropDown.value);
+    console.log(q5DropDown.value);
 
     // pushes all values from dropdowns
     answerArr.push(q1DropDown.value);
@@ -150,7 +141,7 @@ function handleSubmit(event) {
     answerArr.push(q3DropDown.value);
     answerArr.push(q4DropDown.value);
     answerArr.push(q5DropDown.value);
-    console.log(answerArr)
+    console.log(answerArr);
 
     // creates an objct to keep track of type frequency
     for (let i = 0; i < answerArr.length; i++) {
@@ -161,7 +152,7 @@ function handleSubmit(event) {
             typeCount[type] = 1;
         }
     }
-    console.log(typeCount)
+    console.log(typeCount);
 
     // finds the key with the highest value
     var max = 0;
@@ -174,16 +165,18 @@ function handleSubmit(event) {
             maxKey = type
         }
     }
-    console.log(typeCount)
-    console.log(maxKey)
+    console.log(typeCount);
+    console.log(maxKey);
 
+    var resultStored = localStorage.setItem("Type", maxKey);
+    console.log(results);
 
     // search using the pokemon type
     findAPokemonType(maxKey);
-}
+};
 // Display the result
 
-var questionForm = document.getElementById('question-form')
+var questionForm = document.getElementById('question-form');
 
 
 // console.log(`\nBased on your responses, your Pokémon type is ${pokemonType}!`);
