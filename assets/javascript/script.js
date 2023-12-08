@@ -77,12 +77,12 @@ function accessGiphyPokemonApi(pokeName) {
             //imgLink.setAttribute('src', pokeImg);
 
             //Dynamically calls pokemon giphs based off pokeName passed-in-variable
-//            var pokeGiph = data.data[0].images.original.url;
+           var pokeGiph = data.data[0].images.original.url;
   //          console.log("Pokemon Gif Link: " + pokeGiph);
 
             //will be giph in html
             var giphLink = document.getElementById('gif');
-            giphLink.setAttribute('src', pokeGifArray);
+            giphLink.setAttribute('src', pokeGiph);
 
         })
 };
