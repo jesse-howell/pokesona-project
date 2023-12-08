@@ -157,6 +157,8 @@ function displayPrevType() {
     endPEl.setAttribute("class", "font-italic", "text-center");
     endPEl.setAttribute("id", "congrats")
     endPEl.innerHTML = endP;
+
+    increaseFontSz();
 };
 
 function increaseFontSz () {
