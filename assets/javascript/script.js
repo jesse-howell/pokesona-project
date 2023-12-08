@@ -168,7 +168,7 @@ function handleSubmit(event) {
     console.log(typeCount);
     console.log(maxKey);
 
-    var resultStored = localStorage.setItem("Type", maxKey);
+    localStorage.setItem("Type", maxKey);
     // console.log(results);
 
     // search using the pokemon type
