@@ -16,7 +16,7 @@ APIs Used:
 2) Giphy https://developers.giphy.com/docs/api/  
 
 ## Screenshot
-![Webpage Screenshot](./assets/image)
+![Webpage Screenshot](./assets/images/Pokesona-Quiz.png)
 
 ## Link
-[Link To URL](https://)
+[Link To URL](https://jesse-howell.github.io/pokesona-project/)
